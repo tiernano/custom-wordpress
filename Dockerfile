@@ -1,5 +1,6 @@
 FROM wordpress:php8.2-fpm
 # printf statement mocks answering the prompts from the pecl install
+
 RUN apt update && apt install zlib1g-dev libmemcached-dev libpcre3-dev -y
 RUN printf "\n \n" | pecl install redis && docker-php-ext-enable redis
 RUN printf "\n \n" | pecl install memcached && docker-php-ext-enable memcached
