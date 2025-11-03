@@ -8,6 +8,10 @@ RUN printf "\n \n" | pecl install memcached && docker-php-ext-enable memcached
 
 #RUN echo "upload_max_filesize = 10M;" >> "/usr/local/etc/php/php.ini"
 
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN chmod +x wp-cli.phar
+RUN mv wp-cli.phar /usr/local/bin/wp
+
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 RUN mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
