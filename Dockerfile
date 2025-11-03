@@ -1,4 +1,4 @@
-FROM wordpress:php8.2-fpm
+FROM wordpress:php8.4-fpm
 # printf statement mocks answering the prompts from the pecl install
 
 RUN apt update && apt install zlib1g-dev libmemcached-dev libpcre3-dev -y
@@ -12,8 +12,6 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-
-ENTRYPOINT ["docker-entrypoint.sh"]
 RUN mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini
 RUN echo "upload_max_filesize = 10M;" >> "/usr/local/etc/php/php.ini"
 
