@@ -1,4 +1,4 @@
-FROM wordpress:php8.4-fpm
+FROM wordpress:php8.5-fpm
 # printf statement mocks answering the prompts from the pecl install
 
 RUN apt update && apt install zlib1g-dev libmemcached-dev  -y
