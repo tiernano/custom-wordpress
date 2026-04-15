@@ -1,7 +1,7 @@
 FROM wordpress:php8.3-fpm
 
 # Install PHP extensions and dependencies in a single layer
-RUN apt-get update && apt-get install -y zlib1g-dev libmemcached-dev libpcre3-dev less \
+RUN apt-get update && apt-get install -y zlib1g-dev libmemcached-dev less \
     && printf "\n \n" | pecl install redis \
     && docker-php-ext-enable redis \
     && printf "\n \n" | pecl install memcached \
