@@ -1,4 +1,4 @@
-FROM wordpress:php8.3-fpm
+FROM wordpress:php8.5-fpm
 
 # Install PHP extensions and dependencies in a single layer
 RUN apt-get update && apt-get install -y zlib1g-dev libmemcached-dev less \
