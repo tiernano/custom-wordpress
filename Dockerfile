@@ -6,6 +6,8 @@ RUN apt-get update && apt-get install -y zlib1g-dev libmemcached-dev less \
     && docker-php-ext-enable redis \
     && printf "\n \n" | pecl install memcached \
     && docker-php-ext-enable memcached \
+    && printf "\n \n" | pecl install apcu \
+    && docker-php-ext-enable apcu \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install WP-CLI
